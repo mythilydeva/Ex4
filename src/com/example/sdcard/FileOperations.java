@@ -19,8 +19,8 @@ public class FileOperations {
     public Boolean write(String fname, String fcontent){
            try {
 
-        	   File file= new File(Environment.getExternalStorageDirectory() + "");
-
+        	   //File file= new File(Environment.getExternalStorageDirectory() + "");
+        	   File file = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);// or DIRECTORY_PICTURES
                // If file does not exists, then create it
                if (!file.exists()) {
                    file.createNewFile();
