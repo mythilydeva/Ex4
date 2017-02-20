@@ -19,8 +19,12 @@ public class FileOperations {
     public Boolean write(String fname, String fcontent){
            try {
 
-        	   //File file= new File(Environment.getExternalStorageDirectory() + "");
-        	   File file = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);// or DIRECTORY_PICTURES
+        	  // File file= new File(Environment.getExternalStorageDirectory() + "D:/workspace_Android/SdCard/my.txt");
+        	   //File file = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);// or DIRECTORY_PICTURES
+        	   String fpath = "D:/workspace_Android/SdCard/my.txt";
+        	   
+               File file = new File(fpath);
+
                // If file does not exists, then create it
                if (!file.exists()) {
                    file.createNewFile();
@@ -49,8 +53,10 @@ public class FileOperations {
            try {
 
                StringBuffer output = new StringBuffer();
-               File file= new File(Environment.getExternalStorageDirectory() + "");
-
+               //File file= new File(Environment.getExternalStorageDirectory() + "");
+               String fpath = "D:/workspace_Android/SdCard/my.txt";
+        	   
+               File file = new File(fpath);
                br = new BufferedReader(new FileReader(file));
                String line = "";
                while ((line = br.readLine()) != null) {
