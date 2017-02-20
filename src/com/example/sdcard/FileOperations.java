@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import android.os.Environment;
 import android.util.Log;
 
 
@@ -18,9 +19,7 @@ public class FileOperations {
     public Boolean write(String fname, String fcontent){
            try {
 
-               String fpath = "/sdcard/"+fname+".txt";
-
-               File file = new File(fpath);
+        	   File file= new File(Environment.getExternalStorageDirectory() + "");
 
                // If file does not exists, then create it
                if (!file.exists()) {
@@ -50,9 +49,9 @@ public class FileOperations {
            try {
 
                StringBuffer output = new StringBuffer();
-               String fpath = "/sdcard/"+fname+".txt";
+               File file= new File(Environment.getExternalStorageDirectory() + "");
 
-               br = new BufferedReader(new FileReader(fpath));
+               br = new BufferedReader(new FileReader(file));
                String line = "";
                while ((line = br.readLine()) != null) {
                    output.append(line +"n");
